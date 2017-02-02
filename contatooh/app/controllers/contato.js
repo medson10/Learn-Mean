@@ -23,5 +23,13 @@ module.exports = function() {
 
   };
 
+  controller.removeContato = function(req, res) {
+    var idContato = req.params.id;
+    contatos = contatos.filter(function(contato) {
+      return contato._id != idContato;
+    });
+    res.status(204).end();
+  };
+
   return controller;
 };
